@@ -4,7 +4,7 @@ import re
 from nltk.corpus import stopwords
 import string
 
-data=pd.read_csv("C:/Users/Mohit K/Desktop/labeledTrainData.tsv",delimiter = '\t')
+data=pd.read_csv(".../labeledTrainData.tsv",delimiter = '\t')
 data.head()
 
 data = data.drop(columns="id")
