@@ -6,6 +6,8 @@ from nltk.tokenize import word_tokenize
 from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 from nltk import pos_tag,ne_chunk
+import spacy
+nlp=spacy.load('en_core_web_sm')
 
 strr = "There are 3 balls in this bag, and 12 in the other one."
 
@@ -64,3 +66,9 @@ for parsetree in tree.subtrees():
 
 #Named entity recognition
 chunkk=ne_chunk(tagg)
+
+#dependency parsing
+text="There are 3 balls in this bag, and 12 in the other one."
+
+for token in nlp(text):
+    print(token.text,'=>',token.dep_,'=>',token.head.text)
