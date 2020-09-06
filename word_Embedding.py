@@ -17,7 +17,7 @@ corpus = ['then say',
 vocab_size = 50
 oneHot = [one_hot(d, vocab_size) for d in corpus]
 print(oneHot)
-# pad documents to a max length of 4 words
+
 max_length = 4
 pad = pad_sequences(oneHot, maxlen=max_length, padding='post')
 print(pad)
@@ -25,7 +25,6 @@ print(pad)
 model = Sequential()
 model.add(Embedding(vocab_size, 8, input_length=max_length))
 model.compile(optimizer='adam', loss='mse')
-# summarize the model
 print(model.summary())
 
 print(model.predict(pad))
